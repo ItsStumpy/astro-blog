@@ -1,21 +1,21 @@
 ---
-import "../styles/global.css"
-import BaseLayout from '../layouts/BaseLayout.astro'
-
-const pageTitle = "Home"
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Greeting from "../components/Greeting";
+const pageTitle = "Home";
 ---
 
 <html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>{pageTitle}</title>
-	</head>
-	<body>
-		<BaseLayout pageTitle={pageTitle}>
-				<h2>Some Super Awesome Subtitle</h2>
-		</BaseLayout>
-	</body>
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{pageTitle}</title>
+  </head>
+  <body>
+    <BaseLayout pageTitle={pageTitle}>
+      <h2>Some Super Awesome Subtitle</h2>
+      <Greeting client:load messages={["Hej", "Hallo", "Hola", "Habari"]} />
+    </BaseLayout>
+  </body>
 </html>
