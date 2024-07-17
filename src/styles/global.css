@@ -1,19 +1,55 @@
-﻿html {
+﻿* {
+    /* TESTING ONLY, REMOVE WHEN FINISHED */
+    /* border: 1px dotted green; */
+    /* Keep this of course 🫡 */
+    box-sizing: border-box;
+}
+
+html {
     background-color: #f1f5f9;
     font-family: sans-serif;
+    background: #e8cfc5;
 }
 
 body {
-    margin: 0 auto;
+    /* margin: 4rem auto 0 auto; */
     width: 100%;
-    max-width: 80ch;
-    padding: 1rem;
+    max-width: 160ch;
+    padding: 1rem 1rem 0 1rem;
     line-height: 1.5;
+    background: #faece6;
+    border-top-left-radius: 1rem;
+    border-top-right-radius: 1rem;
 }
 
-* {
-    box-sizing: border-box;
+#landing-html {
+    height: 100vh;
+    position: relative;
 }
+
+/* @lexi - doing work 🙏... not a peasant */
+#landing-body {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    overflow: hidden;
+    height: 95%;
+}
+
+#landing-h1 {
+    font-size: 0.7rem;
+    color: #f06735;
+    background-color: #f7d7cb;
+    width: max-content;
+    padding: 0.5rem 1rem;
+    border-radius: 32px;
+    text-transform: uppercase;
+}
+
+/* #landing-bottom-section {
+    height: 30rem;
+} */
 
 h1 {
     margin: 1rem 0;
@@ -35,27 +71,21 @@ h1 {
 }
 
 .nav-links {
+    display: flex;
+    gap: 1rem;
     width: 100%;
     top: 5rem;
     left: 48px;
-    background-color: #ff9776;
-    display: none;
     margin: 0;
 }
 
 .nav-links a {
     display: block;
     text-align: center;
-    padding: 10px 0;
+    padding: 0.5rem;
     text-decoration: none;
     font-size: 1.2rem;
     font-weight: bold;
-    text-transform: uppercase;
-}
-
-.nav-links a:hover,
-.nav-links a:focus {
-    background-color: #ff9776;
 }
 
 .expanded {
@@ -73,17 +103,16 @@ html.dark {
 }
 
 @media screen and (min-width: 636px) {
-    .nav-links {
+    /* .nav-links {
         margin-left: 5em;
         display: block;
         position: static;
         width: auto;
         background: none;
-    }
+    } */
 
     .nav-links a {
         display: inline-block;
-        padding: 15px 20px;
     }
     
     .hamburger {
