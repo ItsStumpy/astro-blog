@@ -13,6 +13,7 @@ html {
 
 body {
     /* margin: 4rem auto 0 auto; */
+    /* font-family: 'Oswald Variable', sans-serif; */
     width: 100%;
     max-width: 160ch;
     padding: 1rem 1rem 0 1rem;
@@ -20,6 +21,15 @@ body {
     background: #faece6;
     border-top-left-radius: 1rem;
     border-top-right-radius: 1rem;
+}
+
+h1 {
+    margin: 1rem 0;
+    font-size: 2.5rem;
+}
+
+p {
+    font-family: sans-serif;
 }
 
 #landing-html {
@@ -35,6 +45,9 @@ body {
     transform: translateX(-50%);
     overflow: hidden;
     height: 95%;
+    /* background: no-repeat url("/images/cherry-blossoms-ai.jpg");
+    background-position: right, left;
+    background-size: cover; */
 }
 
 #landing-h1 {
@@ -47,13 +60,16 @@ body {
     text-transform: uppercase;
 }
 
-/* #landing-bottom-section {
-    height: 30rem;
-} */
+#intro-text {
+    max-width: 36rem;
+}
 
-h1 {
-    margin: 1rem 0;
-    font-size: 2.5rem;
+.arrow-outward-rounded-link {
+    color: red;
+    font-size: 20px;
+    background-color: #f7d7cb;
+    padding: 0.5rem;
+    border-radius: 1em;
 }
 
 /* nav styles */

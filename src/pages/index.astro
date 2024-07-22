@@ -1,5 +1,7 @@
 ---
+import BlogCard from "../components/BlogCard.astro";
 import BaseLayout from "../layouts/BaseLayout.astro";
+import { Icon } from "astro-icon/components";
 const pageTitle = "Personal Blog";
 ---
 
@@ -19,8 +21,8 @@ const pageTitle = "Personal Blog";
         <!-- Right Side CTA -->
         <section class="grid gap-4">
           <h1 id="landing-h1">{pageTitle}</h1>
-          <div class="font-bold flex flex-col gap-2">
-            <p class="text-8xl">Enjoy the Brain Dumps!</p>
+          <div class="font-bold flex flex-col gap-6">
+            <p class="text-8xl font-sans">Enjoy the Brain Dumps!</p>
             <p class="italic">
               FYI: There&apos;s never enough coffee in the day...
             </p>
@@ -35,39 +37,51 @@ const pageTitle = "Personal Blog";
           <span class="border-t-2 border-zinc-400"></span>
         </section>
       </main>
-      <section
-        id="landing-bottom-section"
-        class="bg-slate-50 rounded-t-2xl flex flex-col mt-6 w-full"
-      >
-        <div class="flex self-end gap-8 text-justify text-sm p-2">
-          <p class="max-w-80">
-            Hey there, Nice of you to drop by! My name is Josh (AKA Stumpy) and
-            this is my personal dev blog. In here, you will find stories of my
-            personal life & tech journey. I believe in being open with others,
-            even to a fault, and I wanted to share my life and maybe help a few
-            people feel less lonely in their journey. Spread a lil' of that
-            #relatable, if you know what I mean.
-          </p>
-          <p class="max-w-80">
-            Now that the introduction is out of the way, you&apos;re probably
-            wondering what I am getting out of this (or maybe not, I don&apos;t
-            know for sure)... Well, personally, this blog serves 2 goals:
-            <em
-              >1: Give me the ability to look back and go, "Huh, that was really
-              dumb of me..." and 2: Share some knowledge with you all from a
-              different perspective
-            </em>
-            ...and that&apos;s about it I guess. Just remember, if you&apos;re not
-            a <i>10x Engineer</i>, are you even doing it right?
-          </p>
-        </div>
-        <div>
-          <h2>My Favorites</h2>
-          <p>daddy's girl</p>
-          <!-- <BlogCard />
-          <BlogCard />
-          <BlogCard />
-          <BlogCard /> -->
+      <section class="grid place-content-center">
+        <div
+          id="landing-bottom-wrapper"
+          class="bg-slate-50 rounded-t-2xl flex flex-col px-6 mt-6"
+        >
+          <div class="flex self-end gap-8 text-justify py-2">
+            <p id="intro-text" class="text-lg">
+              Hey there, Nice of you to drop by! My name is Josh (AKA Stumpy)
+              and this is my personal dev blog. In here, you will find stories
+              of my personal life & tech journey. I believe in being open with
+              others, even to a fault, and I wanted to share my life and maybe
+              help a few people feel less lonely in their journey. Spread a lil'
+              of that #relatable, if you know what I mean.
+            </p>
+            <!-- <p class="max-w-80">
+              Now that the introduction is out of the way, you&apos;re probably
+              wondering what I am getting out of this (or maybe not, I don&apos;t
+              know for sure)... Well, personally, this blog serves 2 goals:
+              <em
+                >1: Give me the ability to look back and go, "Huh, that was really
+                dumb of me..." and 2: Share some knowledge with you all from a
+                different perspective
+              </em>
+              ...and that&apos;s about it I guess. Just remember, if you&apos;re not
+              a <i>10x Engineer</i>, are you even doing it right?
+            </p> -->
+          </div>
+          <div class="flex justify-between">
+            <h2 class="font-sans font-semibold text-2xl">My Favorites</h2>
+            <div class="flex gap-4">
+              <p class="self-center">Read More</p>
+              <a href="/blog/" class="arrow-outward-rounded-link flex">
+                <Icon
+                  name="material-symbols:arrow-outward-rounded"
+                  class="arrow-outward-rounded self-center"
+                />
+              </a>
+            </div>
+          </div>
+          <div class="flex justify-between gap-4 py-6">
+            <BlogCard />
+            <BlogCard />
+            <BlogCard />
+            <BlogCard />
+          </div>
         </div>
       </section>
     </BaseLayout>
