@@ -11,9 +11,7 @@ html {
     background: #e8cfc5;
 }
 
-body {
-    /* margin: 4rem auto 0 auto; */
-    /* font-family: 'Oswald Variable', sans-serif; */
+#app-wrapper {
     width: 100%;
     max-width: 160ch;
     padding: 1rem 1rem 0 1rem;
@@ -21,6 +19,7 @@ body {
     background: #faece6;
     border-top-left-radius: 1rem;
     border-top-right-radius: 1rem;
+    margin: 1rem auto 0;
 }
 
 h1 {
@@ -30,24 +29,6 @@ h1 {
 
 p {
     font-family: sans-serif;
-}
-
-#landing-html {
-    height: 100vh;
-    position: relative;
-}
-
-/* @lexi - doing work 🙏... not a peasant */
-#landing-body {
-    position: absolute;
-    bottom: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    overflow: hidden;
-    height: 95%;
-    /* background: no-repeat url("/images/cherry-blossoms-ai.jpg");
-    background-position: right, left;
-    background-size: cover; */
 }
 
 #landing-h1 {

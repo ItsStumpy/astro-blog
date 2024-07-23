@@ -17,15 +17,33 @@ const allPosts = await getCollection("posts");
   </head>
   <body>
     <BaseLayout pageTitle={pageTitle}>
-      <h2>So you have come for the tea eh?</h2>
+      <h1>Posts</h1>
       <p>This site is a work in progress (WIP), please do check back later!</p>
-      <ul>
-        {
-          allPosts.map((post) => (
-            <BlogPost url={`/posts/${post.slug}/`} title={post.data.title} />
-          ))
-        }
-      </ul>
+      <main class="grid grid-cols-3">
+        <div class="col-span-2">
+          {
+            allPosts.map((post) => (
+              <BlogPost
+                image={post.data.image.url}
+                alt={post.data.image.alt}
+                url={`/posts/${post.slug}/`}
+                tags={post.data.tags}
+                title={post.data.title}
+                description={post.data.description}
+                pubDate={post.data.pubDate}
+              />
+            ))
+          }
+        </div>
+        <section class="flex flex-col gap-6">
+          <div>
+            <h2>By Type</h2>
+          </div>
+          <div>
+            <h3>By Tag</h3>
+          </div>
+        </section>
+      </main>
     </BaseLayout>
   </body>
 </html>

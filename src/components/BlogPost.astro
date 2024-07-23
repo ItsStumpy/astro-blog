@@ -1,7 +1,28 @@
 ---
-const { url, title } = Astro.props;
+const { image, alt, url, tags, title, description, pubDate } = Astro.props;
 ---
 
-<li>
-  <a href={url}>{title}</a>
-</li>
+<div class="flex gap-4 py-4">
+  <div class="flex">
+    <img
+      src={image}
+      alt={alt}
+      width="300"
+      class="max-w-none h-44 rounded-3xl object-cover"
+    />
+  </div>
+  <div class="flex flex-col gap-4">
+    <div class="flex items-center">
+      {
+        tags.map((tag) => (
+          <p class="w-max text-center m-1 rounded-2xl border-y-fuchsia-100 py-2 px-4 text-sm bg-slate-100">
+            {tag}
+          </p>
+        ))
+      }
+    </div>
+    <a href={url}>{title}</a>
+    <p>{description}</p>
+    <p>{pubDate.toString().slice(0, 10)}</p>
+  </div>
+</div>
