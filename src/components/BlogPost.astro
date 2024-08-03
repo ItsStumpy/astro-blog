@@ -14,7 +14,7 @@ const { image, alt, url, tags, title, description, pubDate } = Astro.props;
   <div class="flex flex-col gap-4">
     <div class="flex items-center">
       {
-        tags.map((tag) => (
+        tags?.map((tag) => (
           <p class="w-max text-center m-1 rounded-2xl border-y-fuchsia-100 py-2 px-4 text-sm bg-slate-100">
             {tag}
           </p>
@@ -23,6 +23,6 @@ const { image, alt, url, tags, title, description, pubDate } = Astro.props;
     </div>
     <a href={url}>{title}</a>
     <p>{description}</p>
-    <p>{pubDate.toString().slice(0, 10)}</p>
+    <p>{pubDate?.toString().slice(0, 10)}</p>
   </div>
 </div>

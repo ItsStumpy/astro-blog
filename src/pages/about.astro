@@ -1,21 +1,19 @@
 ﻿---
 import BaseLayout from "../layouts/BaseLayout.astro";
+import { getImage } from "astro:assets";
+import aboutImage from "../../public/images/pfp-2.jpg";
 
-const pageTitle = "About Stumpy";
+const pageTitle = "About Me";
+const optimizedAboutImage = await getImage({ src: aboutImage, width: 500 });
 
 const identity = {
-  firstName: "Sarah",
-  country: "Canada",
-  occupation: "Technical Writer",
+  firstName: "Josh",
+  country: "United States",
+  occupation: "Software Engineer/Developer",
   hobbies: ["photography", "birdwatching", "baseball"],
 };
 
 const skills = ["HTML", "CSS", "JavaScript", "React", "Astro", "Writing Docs"];
-
-const happy = true;
-const finished = true;
-const goal = 3;
-
 const skillColor = "navy";
 const fontWeight = "bold";
 const textCase = "uppercase";
@@ -42,30 +40,88 @@ const textCase = "uppercase";
   </head>
   <body>
     <BaseLayout pageTitle={pageTitle}>
-      <h2>Hello There, and welcome to my story</h2>
-      <p>This site is a work in progress (WIP), please do check back later!</p>
-      <p>Will update more in the future...</p>
-      <p>Here are a few facts about me:</p>
-      <ul>
-        <li>My name is {identity.firstName}.</li>
-        <li>
-          I live in {identity.country} and I work as a {identity.occupation}.
-        </li>
-        {
-          identity.hobbies.length >= 2 && (
-            <li>
-              Two of my hobbies are: {identity.hobbies[0]} and{" "}
-              {identity.hobbies[1]}
-            </li>
-          )
-        }
-      </ul>
-      <p>My skills are:</p>
-      <ul>
+      <main class="relative flex py-8 px-16">
+        <h2
+          class="absolute right-56 top-12 font-bold text-9xl tracking-wider uppercase"
+        >
+          {pageTitle}
+        </h2>
+        <div class="w-1/2 grid place-content-center">
+          <img
+            src={optimizedAboutImage.src}
+            {...optimizedAboutImage.attributes}
+          />
+        </div>
+        <div class="flex flex-col gap-8 w-1/2 self-end">
+          <p>
+            My name is Josh and thanks again for checking out the site! A little
+            background here: I&apos;m a Software Engineer/Developer/<em
+              >10x Engineer</em
+            > from Florida. I&apos;ve been doing this stuff since 2020 where I began
+            as a self-taught programmer. From self-taught to bootcamp to university,
+            I&apos;ve used, and have experience, learning in just about every medium
+            so I understand the ups and downs of them all.
+          </p>
+          <p>
+            I got into this field because I always knew I wanted to be at a
+            computer - probably because of my love for video games - and I knew
+            I had to be doing something creative. So here we are fellow nerds,
+            doing stuff n&apos; things, hopefully making cool apps and solving
+            the worlds problems one bug at a time! Also, this blog will
+            hopefully serve a couple of purposes for me: One, to act as sort of
+            a technical journal for the things I learn along my travels in the
+            industry and to share random things I find helpful or cool. Two, to
+            share my story and experiences in hopes that someone like yourself
+            can find some help, relatability, and feel a little less lonely in
+            the developer realm - lord knows it gets dark in here sometimes.
+          </p>
+          <!-- <p>
+            I have always been tech-savvy since I was a kid, but I officially
+            began my developer journey back in 2020 after realizing I needed to
+            create things. I found myself bored most days just grinding away in
+            retail and thought, you know what, I want to make stuff, and since I
+            am an avid gamer I started thinking heavily about becoming a
+            programmer. This is when I packed my bags and officially hit the
+            road! My travels have taken me through countless tutorials, blog
+            posts, and the obvious deep dive into modern day web development.
+          </p>
+          <p>
+            Shortly into my self-taught journey, about 6 months or so, I felt
+            too disorganized. Jumping from topic to topic and not fully grasping
+            what I was learning, I chose to attend my local community college in
+            hopes it would meld some of those gaps and provide a better learning
+            path thatn I had done for myself. While it provided a little more
+            context and understanding, along with a better foundation than my
+            previous efforts, that particular school did not set me up as much
+            as I had hoped. From here, I joined a bootcamp (yaa yaa, I can
+            already hear the eye-rolls... bite me) to build some real-world
+            projects and get hands on with the whole collaboration thing.
+            Luckily enough, I had an amazing instructor, and to this day, is a
+            great friend and mentor! Just before finishing up, I was hired as a
+            full-time engineer at a local company on a 1 year contract. I was
+            given a ton of freedom to learn and make mistakes and could not have
+            asked for a better role and set of mentors there; I will forever be
+            greatful for that opportunity.
+          </p>
+          <p>
+            Fast forward a bit to 2024, I have saved up enough funds - along
+            with the help of family - and have enrolled at Herzing University as
+            I believe it to offer some fantastic programming courses! (Again...
+            If you fault me for this, I like college because it gives me
+            structure where I fail to do so myself). I am still out here making
+            stuff n' things and love what programming can offer and has done for
+            me and the joy that it brings. Remember, it isn't always going to be
+            easy, and no two people will have the same path, but we all will get
+            to where we want to be if we keep at it! Happy coding and enjoy the
+            content fellow nerds!👋
+          </p> -->
+        </div>
+      </main>
+      <!-- <ul>
         {skills.map((skill) => <li class="skill">{skill}</li>)}
-      </ul>
+      </ul> -->
 
-      {happy && <p>I am happy to be learning Astro!</p>}
+      <!-- {happy && <p>I am happy to be learning Astro!</p>}
       {finished && <p>I finished this tut!</p>}
       {
         goal === 3 ? (
@@ -73,7 +129,7 @@ const textCase = "uppercase";
         ) : (
           <p>My goal is not 3 days.</p>
         )
-      }
+      } -->
     </BaseLayout>
   </body>
 </html>
