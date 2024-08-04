@@ -2,9 +2,13 @@
 import BaseLayout from "../layouts/BaseLayout.astro";
 import { getImage } from "astro:assets";
 import aboutImage from "../../public/images/pfp-2.jpg";
+import sideDesign from "../../public/images/knoxsite_sidedesign.png";
+import titleAccent from "../../public/images/knoxsite_titleaccent.png";
 
 const pageTitle = "About Me";
 const optimizedAboutImage = await getImage({ src: aboutImage, width: 500 });
+const optimizedSideDesign = await getImage({ src: sideDesign });
+const optimizedTitleAccent = await getImage({ src: titleAccent });
 
 const identity = {
   firstName: "Josh",
@@ -40,19 +44,25 @@ const textCase = "uppercase";
   </head>
   <body>
     <BaseLayout pageTitle={pageTitle}>
-      <main class="relative flex py-8 px-16">
+      <main class="relative flex gap-4 p-8 w-full">
         <h2
-          class="absolute right-56 top-12 font-bold text-9xl tracking-wider uppercase"
+          id="about-me"
+          class="absolute right-52 top-12 font-bold text-9xl tracking-wider uppercase rounded-2xl py-2 px-4"
         >
           {pageTitle}
         </h2>
-        <div class="w-1/2 grid place-content-center">
+        <img src={optimizedTitleAccent.src} class="absolute right-8 top-16" />
+        <div class="flex gap-4 w-1/2">
+          <img src={optimizedSideDesign.src} />
           <img
             src={optimizedAboutImage.src}
             {...optimizedAboutImage.attributes}
           />
         </div>
-        <div class="flex flex-col gap-8 w-1/2 self-end">
+        <div
+          id="about-me-text"
+          class="flex flex-col gap-8 w-1/2 self-end rounded-2xl py-2 px-4"
+        >
           <p>
             My name is Josh and thanks again for checking out the site! A little
             background here: I&apos;m a Software Engineer/Developer/<em
@@ -133,3 +143,13 @@ const textCase = "uppercase";
     </BaseLayout>
   </body>
 </html>
+
+<style>
+  #about-me {
+    background-color: #ffd8d8;
+  }
+
+  #about-me-text {
+    background-color: #fefaf0;
+  }
+</style>

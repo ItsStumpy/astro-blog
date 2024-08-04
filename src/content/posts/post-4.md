@@ -1,5 +1,5 @@
 ---
-title: My Fourth Blog Post
+title: Repository Pattern In React
 author: Astro Learner
 description: "This post will show up on its own! This post will show up on its own!"
 image:

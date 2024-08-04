@@ -1,5 +1,5 @@
 ﻿---
-title: My Second Blog Post
+title: Useful Algorithms & Data Structures
 author: Astro Learner
 description: "After learning some Astro, I couldn't stop! After learning some Astro, I couldn't stop!"
 image:

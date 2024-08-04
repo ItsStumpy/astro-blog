@@ -3,8 +3,26 @@ import { getCollection } from "astro:content";
 import BlogPost from "../components/BlogPost.astro";
 import BaseLayout from "../layouts/BaseLayout.astro";
 
-const pageTitle = "My Blog";
+const pageTitle = "Tech Journal";
 const allPosts = await getCollection("posts");
+const types = ["Video", "Article"];
+const tags = [
+  "Personal",
+  "DSA",
+  "Next.js",
+  "React",
+  "JavaScript",
+  "TypeScript",
+  "Frontend",
+  "Backend",
+  "Python",
+  "Flask",
+  "SQL (Squeal)",
+  "PHP",
+  "Laravel",
+  "Docker",
+  "Web Development",
+];
 ---
 
 <html lang="en">
@@ -17,9 +35,8 @@ const allPosts = await getCollection("posts");
   </head>
   <body>
     <BaseLayout pageTitle={pageTitle}>
-      <h1>Posts</h1>
-      <p>This site is a work in progress (WIP), please do check back later!</p>
-      <main class="grid grid-cols-3">
+      <!-- <h1>Posts</h1> -->
+      <main class="grid grid-cols-3 gap-4 pb-4">
         <div class="col-span-2">
           {
             allPosts.map((post) => (
@@ -35,15 +52,53 @@ const allPosts = await getCollection("posts");
             ))
           }
         </div>
-        <section class="flex flex-col gap-6">
+        <section
+          id="categories"
+          class="flex flex-col gap-6 py-2 px-4 mb-4 rounded-2xl"
+        >
           <div>
             <h2>By Type</h2>
+            <div class="flex flex-wrap">
+              {
+                types.map((type) => (
+                  <p
+                    id="types"
+                    class="w-max text-center m-1 rounded-2xl py-2 px-4 text-sm"
+                  >
+                    {type}
+                  </p>
+                ))
+              }
+            </div>
           </div>
           <div>
             <h3>By Tag</h3>
+            <div class="flex flex-wrap">
+              {
+                tags.map((tag) => (
+                  <p
+                    id="tags"
+                    class="w-max text-center m-1 rounded-2xl py-2 px-4 text-sm"
+                  >
+                    {tag}
+                  </p>
+                ))
+              }
+            </div>
           </div>
         </section>
       </main>
     </BaseLayout>
   </body>
 </html>
+
+<style>
+  #categories {
+    background-color: rgb(255, 250, 240);
+  }
+
+  #types,
+  #tags {
+    background-color: #ffe1de;
+  }
+</style>

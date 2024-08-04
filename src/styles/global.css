@@ -8,7 +8,7 @@
 html {
     background-color: #f1f5f9;
     font-family: sans-serif;
-    background: #e8cfc5;
+    background-image: url("/images/knoxsite_background_light.jpg");
 }
 
 #app-wrapper {
@@ -17,6 +17,7 @@ html {
     padding: 1rem 1rem 0 1rem;
     line-height: 1.5;
     background: #faece6;
+    /* background-color: #FFCDD0; */
     border-top-left-radius: 1rem;
     border-top-right-radius: 1rem;
     margin: 1rem auto 0;
@@ -98,6 +99,29 @@ html.dark {
 .dark .nav-links a {
     color: #fff;
 }
+
+/** Light mode:
+accent box: FEFAF0
+main box: F8EDE4
+background: E6D0C3
+button background: FEE4E0
+gradient color: first FFD8D8 second FEFAF0
+Link text primary: B48083
+Link text secondary: D28B8F
+dates: CAB2A3
+*/
+
+/** Dark mode colors
+accent box: E2E2FF 
+main box: A7BEF4
+background: 1C4283
+button background: C1D0F0
+gradient color: first A7C1E4 second 1C4283
+Link text primary: 1C3D68
+Link text secondary: 2A5893
+dates: 7795C7
+*/
+
 
 @media screen and (min-width: 636px) {
     /* .nav-links {
