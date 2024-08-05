@@ -12,10 +12,10 @@ const { image, alt, url, tags, title, description, pubDate } = Astro.props;
     />
   </div>
   <div class="flex flex-col gap-4">
-    <div class="flex items-center">
+    <div class="flex items-center gap-2">
       {
         tags?.map((tag) => (
-          <p class="tag w-max text-center m-1 rounded-2xl py-2 px-4 text-sm">
+          <p class="tag w-max text-center rounded-2xl py-2 px-4 text-sm">
             {tag}
           </p>
         ))
