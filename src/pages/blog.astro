@@ -23,6 +23,8 @@ const tags = [
   "Docker",
   "Web Development",
 ];
+
+const selectedTags = new Set();
 ---
 
 <html lang="en">
@@ -61,10 +63,7 @@ const tags = [
             <div class="flex flex-wrap">
               {
                 types.map((type) => (
-                  <p
-                    id="types"
-                    class="w-max text-center m-1 rounded-2xl py-2 px-4 text-sm"
-                  >
+                  <p class="type w-max text-center m-1 rounded-2xl py-2 px-4 text-sm">
                     {type}
                   </p>
                 ))
@@ -76,12 +75,9 @@ const tags = [
             <div class="flex flex-wrap">
               {
                 tags.map((tag) => (
-                  <p
-                    id="tags"
-                    class="w-max text-center m-1 rounded-2xl py-2 px-4 text-sm"
-                  >
+                  <button class="tag w-max text-center m-1 rounded-2xl py-2 px-4 text-sm">
                     {tag}
-                  </p>
+                  </button>
                 ))
               }
             </div>
@@ -93,12 +89,23 @@ const tags = [
 </html>
 
 <style>
+  .selected {
+    background-color: #007bff;
+    color: white;
+  }
+
+  .hidden {
+    display: none;
+  }
+
   #categories {
     background-color: rgb(255, 250, 240);
   }
 
-  #types,
-  #tags {
+  .type,
+  .tag {
     background-color: #ffe1de;
   }
 </style>
+
+<script src="../scripts/tagFilters.ts"></script>
