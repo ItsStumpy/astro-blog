@@ -1,14 +1,13 @@
 ﻿---
 import BaseLayout from "../layouts/BaseLayout.astro";
-import { getImage } from "astro:assets";
-import aboutImage from "../../public/images/pfp-2.jpg";
-import sideDesign from "../../public/images/knoxsite_sidedesign.png";
-import titleAccent from "../../public/images/knoxsite_titleaccent.png";
+import { Image } from "astro:assets";
+import aboutImage from "@assets/pfp-2.jpg";
+import sideDesignLight from "@assets/knoxsite_sidedesign.png";
+import sideDesignDark from "@assets/knoxsite_sidedesign_nm.png";
+import titleAccentLight from "@assets/knoxsite_titleaccent.png";
+import titleAccentDark from "@assets/knoxsite_titleaccent_nm.png";
 
 const pageTitle = "About Me";
-const optimizedAboutImage = await getImage({ src: aboutImage, width: 500 });
-const optimizedSideDesign = await getImage({ src: sideDesign });
-const optimizedTitleAccent = await getImage({ src: titleAccent });
 
 // const identity = {
 //   firstName: "Josh",
@@ -40,13 +39,17 @@ const optimizedTitleAccent = await getImage({ src: titleAccent });
         >
           {pageTitle}
         </h2>
-        <img src={optimizedTitleAccent.src} class="absolute right-8 top-16" />
+        <Image
+          src={titleAccentLight}
+          alt="Asymmetrical pattern of shapes and colors for design aesthetic"
+          class="absolute right-8 top-16"
+        />
         <div class="flex gap-4 w-1/2">
-          <img src={optimizedSideDesign.src} />
-          <img
-            src={optimizedAboutImage.src}
-            {...optimizedAboutImage.attributes}
+          <Image
+            src={sideDesignLight}
+            alt="A stack of blocks with different shapes and sizes for design aesthetic"
           />
+          <Image src={aboutImage} alt="Josh and his dog Charcoal" width={500} />
         </div>
         <div
           id="about-me-text"

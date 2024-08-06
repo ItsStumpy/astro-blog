@@ -41,8 +41,7 @@ const pageTitle = "Personal Blog";
       </main>
       <section class="grid place-content-center mt-10">
         <div
-          id="landing-bottom-wrapper"
-          class="bg-slate-50 rounded-t-2xl flex flex-col px-6 mt-5"
+          class="custom-polygon bg-slate-50 rounded-t-2xl flex flex-col px-6 mt-5"
         >
           <div class="flex self-end gap-8 text-justify py-6">
             <p id="intro-text" class="text-lg">
@@ -102,6 +101,18 @@ const pageTitle = "Personal Blog";
     padding: 0.5rem 1rem;
     border-radius: 32px;
     text-transform: uppercase;
+  }
+
+  .custom-polygon {
+    clip-path: polygon(
+      50% 25%,
+      50% 0,
+      100% 0,
+      100% 100%,
+      0 100%,
+      0% 43%,
+      40% 43%
+    );
   }
 
   #intro-text {
