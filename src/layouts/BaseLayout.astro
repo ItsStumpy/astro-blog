@@ -1,5 +1,6 @@
 ﻿---
 import "@fontsource-variable/oswald";
+import "@fontsource/fasthand";
 import { ViewTransitions } from "astro:transitions";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
@@ -26,5 +27,18 @@ const { pageTitle } = Astro.props;
     <script>
       import "../scripts/menu.js";
     </script>
+    <style>
+      #app-wrapper {
+        width: 100%;
+        max-width: 160ch;
+        padding: 1rem 1rem 0 1rem;
+        line-height: 1.5;
+        background: #faece6;
+        /* background-color: #FFCDD0; */
+        border-top-left-radius: 1rem;
+        border-top-right-radius: 1rem;
+        margin: 1rem auto 0;
+      }
+    </style>
   </body>
 </html>

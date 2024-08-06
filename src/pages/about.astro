@@ -10,17 +10,17 @@ const optimizedAboutImage = await getImage({ src: aboutImage, width: 500 });
 const optimizedSideDesign = await getImage({ src: sideDesign });
 const optimizedTitleAccent = await getImage({ src: titleAccent });
 
-const identity = {
-  firstName: "Josh",
-  country: "United States",
-  occupation: "Software Engineer/Developer",
-  hobbies: ["photography", "birdwatching", "baseball"],
-};
+// const identity = {
+//   firstName: "Josh",
+//   country: "United States",
+//   occupation: "Software Engineer/Developer",
+//   hobbies: ["photography", "birdwatching", "baseball"],
+// };
 
-const skills = ["HTML", "CSS", "JavaScript", "React", "Astro", "Writing Docs"];
-const skillColor = "navy";
-const fontWeight = "bold";
-const textCase = "uppercase";
+// const skills = ["HTML", "CSS", "JavaScript", "React", "Astro", "Writing Docs"];
+// const skillColor = "navy";
+// const fontWeight = "bold";
+// const textCase = "uppercase";
 ---
 
 <html lang="en">
@@ -30,17 +30,6 @@ const textCase = "uppercase";
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
     <title>{pageTitle}</title>
-    <style define:vars={{ skillColor, fontWeight, textCase }}>
-      h1 {
-        color: purple;
-        font-size: 4rem;
-      }
-      .skill {
-        color: var(--skillColor);
-        font-weight: var(--fontWeight);
-        text-transform: var(--textCase);
-      }
-    </style>
   </head>
   <body>
     <BaseLayout pageTitle={pageTitle}>
@@ -133,6 +122,7 @@ const textCase = "uppercase";
 
 <style>
   #about-me {
+    font-family: "Fasthand";
     background-color: #ffd8d8;
   }
 

@@ -6,7 +6,7 @@ export default {
 	theme: {
 		extend: {
 			fontFamily: {
-				sans: ['Oswald Variable', ...defaultTheme.fontFamily.sans]
+				sans: ['Oswald Variable', 'Fasthand', ...defaultTheme.fontFamily.sans]
 			}
 		},
 	},
